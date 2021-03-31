@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on win32)" generated="20210331 17:00:49.552" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\issam\Desktop\robot framework\CreateKeywordsPython\Tests">
+<suite id="s1-s1" name="Main" source="C:\Users\issam\Desktop\robot framework\CreateKeywordsPython\Tests\main.robot">
+<kw name="Begin test web" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>browser=${navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210331 17:00:49.898" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210331 17:00:49.898" endtime="20210331 17:00:51.371"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210331 17:00:51.371" endtime="20210331 17:00:51.531"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210331 17:00:51.532" level="INFO">Opening url 'https://www.vogue.com/fashion'</msg>
+<status status="PASS" starttime="20210331 17:00:51.532" endtime="20210331 17:01:05.603"/>
+</kw>
+<status status="PASS" starttime="20210331 17:00:49.897" endtime="20210331 17:01:05.603"/>
+</kw>
+<test id="s1-s1-t1" name="Main Test">
+<kw name="external keywords">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Fashion</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210331 17:01:05.607" endtime="20210331 17:01:05.677"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20210331 17:01:05.687" level="INFO">${title} = https://www.vogue.com/fashion</msg>
+<status status="PASS" starttime="20210331 17:01:05.678" endtime="20210331 17:01:05.687"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210331 17:01:05.688" level="INFO">https://www.vogue.com/fashion</msg>
+<status status="PASS" starttime="20210331 17:01:05.687" endtime="20210331 17:01:05.688"/>
+</kw>
+<kw name="Keywords de systeme fichier create folder" library="ResourceOS">
+<arg>images1</arg>
+<kw name="Createfolder" library="KeywordsFileSystem">
+<arg>${foldername}</arg>
+<status status="PASS" starttime="20210331 17:01:05.688" endtime="20210331 17:01:05.689"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>"Folder create successfuly"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210331 17:01:05.690" level="INFO">"Folder create successfuly"</msg>
+<status status="PASS" starttime="20210331 17:01:05.690" endtime="20210331 17:01:05.690"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:05.688" endtime="20210331 17:01:05.691"/>
+</kw>
+<kw name="Keywords de systeme fichier save file" library="ResourceOS">
+<arg>images1</arg>
+<arg>robot1.jpg</arg>
+<kw name="Savefilebyurl" library="KeywordsFileSystem">
+<arg>${foldername}</arg>
+<arg>${filename}</arg>
+<status status="PASS" starttime="20210331 17:01:05.692" endtime="20210331 17:01:06.120"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>"file save successfuly"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210331 17:01:06.121" level="INFO">"file save successfuly"</msg>
+<status status="PASS" starttime="20210331 17:01:06.121" endtime="20210331 17:01:06.121"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:05.691" endtime="20210331 17:01:06.122"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:05.606" endtime="20210331 17:01:06.122"/>
+</kw>
+<kw name="capture page and specific element">
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main-content"]/div[2]/div[1]/div/div/div[1]/div[1]/a/span/div</arg>
+<arg>screenElement.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20210331 17:01:07.001" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenElement.png"&gt;&lt;img src="screenElement.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210331 17:01:06.123" endtime="20210331 17:01:07.001"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>pageScreen.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210331 17:01:07.906" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="pageScreen.png"&gt;&lt;img src="pageScreen.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210331 17:01:07.001" endtime="20210331 17:01:07.907"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:06.123" endtime="20210331 17:01:07.907"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:05.604" endtime="20210331 17:01:07.907"/>
+</test>
+<kw name="End test web" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210331 17:01:07.911" endtime="20210331 17:01:10.523"/>
+</kw>
+<status status="PASS" starttime="20210331 17:01:07.910" endtime="20210331 17:01:10.524"/>
+</kw>
+<doc>User defined keywords</doc>
+<status status="PASS" starttime="20210331 17:00:49.591" endtime="20210331 17:01:10.524"/>
+</suite>
+<status status="PASS" starttime="20210331 17:00:49.555" endtime="20210331 17:01:10.529"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Main">Tests.Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
